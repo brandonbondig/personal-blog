@@ -2,9 +2,9 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://bondig.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
+  author: "Brandon Bondig",
   desc: "My personal blog about web development and programming.",
-  title: "Brandon Bondig",
+  title: "Bondig.dev",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
