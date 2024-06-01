@@ -12,3 +12,8 @@ Feel free to explore my projects and get in touch if you'd like to collaborate o
 <div>
   <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
 </div>
+
+## Contact
+
+- Email: [ brandon@bondig.dk ](mailto:brandon@bondig.dev)
+- LinkedIn: [ Brandon Bondig ](https://www.linkedin.com/in/brandonbondig/)
