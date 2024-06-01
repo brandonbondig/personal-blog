@@ -13,7 +13,7 @@ tags:
 description: Learn how to use EventSource in JavaScript to enable server-sent events in your web applications.
 ---
 
-In this blog post, we will explore how to use the `EventSource` interface in JavaScript to handle server-sent events (SSE). Server-sent events allow servers to push updates to clients in real-time over a single HTTP connection, making them ideal for use cases like live updates, notifications, and real-time data feeds.
+In this blog post, we'll explore how to use the `EventSource` interface in JavaScript to handle server-sent events (SSE). Server-sent events allow servers to push updates to clients in real-time over a single HTTP connection, making them ideal for use cases like live updates, notifications, and real-time data feeds.
 
 ## Table of contents
 
