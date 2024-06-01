@@ -1,6 +1,6 @@
 ---
-author: Sat Naing
-pubDatetime: 2024-06-01T21:30:00Z
+author: Brandon Bondig
+pubDatetime: 2024-06-01T23:32:00Z
 modDatetime:
 title: Using the 'TooGoodToGo' API to Reserve Bags
 slug: using-the-tgtg-api-to-reserve-bags
