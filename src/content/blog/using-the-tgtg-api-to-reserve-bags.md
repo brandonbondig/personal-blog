@@ -8,7 +8,7 @@ featured: true
 draft: false
 tags:
   - Too Good To Go
-  - web development
+  - python
   - API
 description: Learn how to use the Too Good To Go (TGTG) API to reserve bags of surplus food from local stores and restaurants.
 ---
