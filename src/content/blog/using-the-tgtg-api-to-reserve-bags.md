@@ -1,6 +1,6 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-06-01T23:32:00Z
+pubDatetime: 2024-06-01T23:32:30Z
 modDatetime:
 title: Using the 'TooGoodToGo' API to Reserve Bags
 slug: using-the-tgtg-api-to-reserve-bags
