@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://bondig.dev/", // replace this with your deployed domain
   author: "Brandon Bondig",
   desc: "My personal blog about web development and programming.",
-  title: "Bondig",
+  title: "Bondig Blog",
   header: "Bondig.dev",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
