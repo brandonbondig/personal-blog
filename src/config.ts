@@ -4,10 +4,11 @@ export const SITE: Site = {
   website: "https://bondig.dev/", // replace this with your deployed domain
   author: "Brandon Bondig",
   desc: "My personal blog about web development and programming.",
-  title: "Bondig.dev",
+  title: "Bondig",
+  header: "Bondig.dev",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
