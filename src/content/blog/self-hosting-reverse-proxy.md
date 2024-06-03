@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-06-03T14:31:00Z
-modDatetime: 2024-06-03T22:01:46Z
+pubDatetime: 2024-06-04T00:37:09Z
+modDatetime:
 title: Self Hosting Reverse Proxy with Fast Reverse Proxy (FRP)
 slug: self-hosting-reverse-proxy
 featured: true
