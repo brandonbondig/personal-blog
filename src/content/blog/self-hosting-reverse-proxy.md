@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
 pubDatetime: 2024-06-03T14:31:00Z
-modDatetime:
+modDatetime: 2024-06-03T22:01:46Z
 title: Self Hosting Reverse Proxy with Fast Reverse Proxy (FRP)
 slug: self-hosting-reverse-proxy
 featured: true
@@ -29,7 +29,7 @@ In this article, we'll focus on setting up a reverse proxy to tunnel traffic bet
 First of, you'll need to download the FRP binary from the [official website](https://github.com/fatedier/frp/releases).
 Choose the appropriate version for your operating system and architecture.
 
-We'll use the `linux_amd64` version for this tutorial.
+We will use the `linux_amd64` version for this tutorial.
 
 Then extract the downloaded file and navigate to the extracted directory.
 

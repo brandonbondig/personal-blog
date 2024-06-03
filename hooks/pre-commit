@@ -1,9 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx lint-staged
-echo "This is our new pre-commit hook"
-
 # Modified files, update the modDatetime
 git diff --cached --name-status |
 grep -i '^M.*\.md$' |
