@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
 pubDatetime: 2024-06-01T21:32:30Z
-modDatetime:
+modDatetime: 2024-06-03T22:06:07Z
 title: Using the 'TooGoodToGo' API to Reserve Bags
 slug: using-the-tgtg-api-to-reserve-bags
 featured: true
@@ -23,7 +23,7 @@ Too Good To Go is a mobile app that allows users to purchase bags of surplus foo
 
 ## The Too Good To Go API
 
-TooGoodToGo does not provide an official public API for developers to access their services. However, there are unofficial APIs available that allow developers to interact with the platform programmatically. These APIs provide endpoints for searching for stores, viewing bag details, and reserving bags.
+Too Good To Go does not provide an official public API for developers to access their services. However, there are unofficial APIs available that allow developers to interact with the platform programmatically. These APIs provide endpoints for searching for stores, viewing bag details, and reserving bags.
 
 On of which acts as a wrapper around the official Too Good To Go API, providing a more user-friendly interface for developers to interact with the platform. In this tutorial, we'll be using [tgtg-python](https://github.com/ahivert/tgtg-python) made by [ahivert](https://github.com/ahivert) to interact with the Too Good To Go API and reserve bags of surplus food.
 
