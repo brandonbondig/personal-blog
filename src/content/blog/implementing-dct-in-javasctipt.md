@@ -5,7 +5,7 @@ modDatetime:
 title: Implementing Steganography with the Discrete Cosine Transform in JavaScript
 slug: implementing-dct-in-javasctipt
 featured: true
-draft: false
+draft: true
 tags:
   - DCT
   - steganography
