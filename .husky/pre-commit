@@ -13,7 +13,7 @@ while read _ file; do
   draft=$(echo "$frontmatter" | awk '/^draft: /{print $2}')
   if [ "$draft" = "false" ]; then
     echo "$file modDateTime updated"
-    cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime: $(date -u "+%Y-%m-%dT%H:%M:%SZ")/" > tmp
+    cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime: $(date "+%Y-%m-%dT%H:%M:%S%z")/" > tmp
     mv tmp $file
     git add $file
   fi

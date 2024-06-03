@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
 pubDatetime: 2024-06-01T21:32:30Z
-modDatetime: 2024-06-03T22:10:13Z
+modDatetime: 2024-06-04T00:13:48+0200
 title: Using the 'TooGoodToGo' API to Reserve Bags
 slug: using-the-tgtg-api-to-reserve-bags
 featured: true
@@ -19,7 +19,7 @@ Learn how to use the Too Good To Go (TGTG) API to reserve bags of surplus food f
 
 ## What is Too Good To Go?
 
-Too Good To Go is a mobile app that allows users to purchase bags of surplus food from local stores and restaurants at discounted prices. The app connects users with businesses that have excess food inventory and helps reduce food waste by offering these items at a reduced cost. Users can browse available bags in their area, reserve them through the app, and pick them up at the designated time.
+Too Good To Go is a - mobile app that allows users to purchase bags of surplus food from local stores and restaurants at discounted prices. The app connects users with businesses that have excess food inventory and helps reduce food waste by offering these items at a reduced cost. Users can browse available bags in their area, reserve them through the app, and pick them up at the designated time.
 
 ## The Too Good To Go API
 
