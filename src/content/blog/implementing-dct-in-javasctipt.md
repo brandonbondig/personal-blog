@@ -1,11 +1,11 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-06-04T00:22:52Z
+pubDatetime: 2024-06-04T00:38:10Z
 modDatetime:
 title: Implementing Steganography with the Discrete Cosine Transform in JavaScript
 slug: implementing-dct-in-javasctipt
 featured: true
-draft: false
+draft: true
 tags:
   - DCT
   - steganography
