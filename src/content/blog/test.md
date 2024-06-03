@@ -1,11 +1,11 @@
 ---
 author: Brandon Bondig
-pubDatetime:
+pubDatetime: 2024-06-04T00:20:37Z
 modDatetime:
 title: Adding new posts in AstroPaper theme
 slug: test
 featured: true
-draft: first
+draft: false
 tags:
   - docs
 description:
