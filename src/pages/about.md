@@ -5,7 +5,7 @@ title: "About"
 
 Hey, I'm Brandon Bondig, a 22-year-old second-year software student at Aalborg University in Denmark. I have a passion for software development, especially web development, where I enjoy creating functional applications. I'm also really interested in embedded systems, and I love exploring how software and hardware can work together.
 
-When I'm not coding or studying, I love to learn new technologies and work on personal projects that challenge and expand my skill set. My goal is to continue growing as a developer, contributing to exciting and innovative projects in the tech industry.
+When I'm not coding or studying, I love to learn new technologies and work on personal projects that challenge and expand my skill set. My goal is to continue growing as a developer and contribute to exciting and innovative projects in the tech industry.
 
 Feel free to explore my projects and get in touch if you'd like to collaborate or just have a chat about technology!
 
