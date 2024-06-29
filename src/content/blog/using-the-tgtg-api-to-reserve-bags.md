@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-06-01T21:32:30Z
-modDatetime: 2024-06-04T00:14:57Z
+pubDatetime: 2024-06-29T18:16:54Z
+modDatetime: 2024-06-29T18:16:54Z
 title: Using the 'TooGoodToGo' API to Reserve Bags
 slug: using-the-tgtg-api-to-reserve-bags
 featured: true
@@ -12,6 +12,8 @@ tags:
   - API
 description: Learn how to use the Too Good To Go (TGTG) API to reserve bags of surplus food from local stores and restaurants.
 ---
+
+![A starry night sky.](../../assets/images/Cartoon_Style_Blog_Header.png)
 
 Learn how to use the Too Good To Go (TGTG) API to reserve bags of surplus food from local stores and restaurants.
 
