@@ -1,11 +1,11 @@
 ---
 author: Brandon Bondig
-pubDatetime: "now"
-modDatetime:
+pubDatetime: 2024-07-18T00:07:49Z
+modDatetime: 2024-07-18T00:07:49Z
 title: Using the Growatt API
 slug: using-the-growatt-api
 featured: true
-draft: first
+draft: false
 tags:
   - Growatt
   - python
@@ -14,7 +14,7 @@ tags:
 description: Learn how to use the Growatt solar panel API to automate tasks like automatic power switching.
 ---
 
-![A starry night sky.](../../assets/images/Cartoon_Style_Blog_Header.png)
+![A starry night sky.](../../assets/images/solar.webp)
 
 Learn how to use the Growatt solar panel API to automate tasks like automatic power switching.
 
