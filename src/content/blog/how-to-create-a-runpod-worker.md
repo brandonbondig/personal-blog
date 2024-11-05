@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-11-05T12:45:09Z
-title: HoW To Create A Custom Runpod Worker
+pubDatetime: 2024-11-05T13:55:32Z
+title: How To Create A Custom Runpod Worker
 slug: how-to-create-a-runpod-worker
 featured: true
 draft: false
@@ -14,7 +14,7 @@ tags:
 description: Heres some tips and trick to setting up your custom Runpod worker effectivly to get your AI project up and running in no time.
 ---
 
-![A starry night sky.](../../assets/images/runpod-cover-image.png)
+![Runpod cover image](../../assets/images/runpod-cover-image.png)
 
 Heres some tips and trick to setting up your Runpod worker effectivly to get your AI project up and running in no time. This mostly covers the serverless aspect of Runpod.
 
@@ -133,7 +133,7 @@ CMD python3.11 -u /handler.py
 (I've removed some of the comments because it looked bloated)
 
 The first line specifies the base image for your Docker image. Theres a couple of images already configured for CUDA, shown below.
-![alt text](../../assets/images/runpod-images.png)
+![Runpod templates](../../assets/images/runpod-images.png)
 
 > These are actual images used as templates, but you can find the base images in [Dockerhub](https://hub.docker.com/).
 
@@ -175,7 +175,7 @@ Once complete, the next step is to upload the image to [Dockerhub](https://hub.d
 
 2. Navigate to [Dockerhub](https://hub.docker.com/) and create a repository, make sure the name of the repository is the same as the image name and click **Create**.
 
-![alt text](../../assets/images/docker-create-repo.png)
+![Docker create repository](../../assets/images/docker-create-repo.png)
 
 3. Push the local image to the repository:
 
@@ -195,7 +195,7 @@ docker push brandonbondig/first_worker:latest
 2. Click `New Template`.
 3. In the `Template Type` dropdown, choose **Serverless**
 4. In the container image field, specify the image you published to Dockerhub
-   ![alt text](../../assets/images/runpod-serverless-settings.png)
+   ![Creation of runpod template](../../assets/images/runpod-serverless-settings.png)
 
 > You might need to setup Container Registry Credentials, which can be found in the Runpod documentation.
 
@@ -208,7 +208,7 @@ Now that the template is complete, it's time to spin up a Runpod worker!
 1. Navigate to the [Runpod console](https://www.runpod.io/console/pods) as select `Serverless` in the left console.
 2. Click the `New Endpoint button`
    Here, you’ll encounter a range of options, with the most important being the selection of a GPU. To determine the best choice for your application, consider the following factors: GPU availability (indicated by the yellow/green text at the bottom of each GPU option), the required VRAM, and the price per second you’re willing to pay. For instance, larger GPUs like the A100 with 80GB VRAM are currently priced at $0.00076 per second, while smaller options like the RTX4000 with 16GB VRAM are priced at $0.00016 per second.
-   ![alt text](../../assets/images/runpod-configs.png)
+   ![Runpod choose gpu](../../assets/images/runpod-configs.png)
 
 I'd recommend starting out with the lower priced GPU's like the RTX4000 16GB.
 
@@ -228,7 +228,7 @@ I'd recommend starting out with the lower priced GPU's like the RTX4000 16GB.
 I recommend starting with 0 active workers, 1 Max Workers, 1 GPUs/Worker and 1 second Idle Timeout
 
 4. Select the template of the worker you've made and click **deploy**
-   ![alt text](../../assets/images/runpod-deployed.png)
+   ![Deploying worker](../../assets/images/runpod-deployed.png)
    You'll now see the serverless instance booting up. If you click on it, you will be navigated to that instance.
 
 **Congrats, you have now deployed your very first Runpod worker**
@@ -238,7 +238,7 @@ I recommend starting with 0 active workers, 1 Max Workers, 1 GPUs/Worker and 1 s
 We have been provided with an endpoint to interact with the specific serverless instance running the worker.
 
 If you navigate down and click the **Requests** tab, you'll be able to make requests and see previous requests.
-![alt text](../../assets/images/runpod-worker-input.png)
+![Requesting the worker](../../assets/images/runpod-worker-input.png)
 
 Heres where the input from the user comes from, if you remember from earlier, we stated this in the `handler.py` file:
 
