@@ -1,6 +1,6 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-11-05T11:22:31Z
+pubDatetime: 2024-11-05T13:57:32Z
 title: Self-host your own LLM on Runpod
 slug: self-host-your-own-llm-on-runpod
 featured: true
