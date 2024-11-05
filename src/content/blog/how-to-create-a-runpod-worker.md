@@ -1,7 +1,7 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2024-11-04T15:22:00Z
-title: How to create a custom Runpod worker
+pubDatetime: 2024-11-05T12:45:09Z
+title: HoW To Create A Custom Runpod Worker
 slug: how-to-create-a-runpod-worker
 featured: true
 draft: false
