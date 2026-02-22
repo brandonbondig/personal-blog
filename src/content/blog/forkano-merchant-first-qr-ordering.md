@@ -1,9 +1,9 @@
 ---
 author: Brandon Bondig
-pubDatetime: 2026-02-22T17:00:00Z
+pubDatetime: 2026-02-22T14:31:34Z
 title: "Forkano: Merchant-First QR Ordering for Independent Restaurants"
 slug: forkano-merchant-first-qr-ordering
-featured: false
+featured: true
 draft: false
 tags:
   - restaurants
