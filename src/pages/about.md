@@ -3,11 +3,13 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Hey, I'm Brandon Bondig, a 22-year-old second-year software student at Aalborg University in Denmark. I have a passion for software development, especially web development, where I enjoy creating functional applications. I'm also really interested in embedded systems, and I love exploring how software and hardware can work together.
+Hey, I’m Brandon, a 24-year-old software student in my 3rd year at Aalborg University in Denmark.
 
-When I'm not coding or studying, I love to learn new technologies and work on personal projects that challenge and expand my skill set. My goal is to continue growing as a developer and contribute to exciting and innovative projects in the tech industry.
+I’m interested in software development, especially web development, and I enjoy building practical applications that solve real problems. I’m also curious about embedded systems and how software can interact with hardware in useful ways.
 
-Feel free to explore my projects and get in touch if you'd like to collaborate or just have a chat about technology!
+Outside of studying, I spend a lot of time trying out new technologies and working on personal projects to improve as a developer.
+
+Feel free to take a look at my projects, and reach out if you’d like to collaborate or talk tech.
 
 <div>
   <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
