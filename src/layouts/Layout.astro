@@ -39,7 +39,38 @@ const rssHref = getRelativeLocaleUrl(
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Icons: the SVG for modern browsers, rasters for search engines and iOS -->
     <link rel="icon" type="image/svg+xml" href={getAssetPath("favicon.svg")} />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href={getAssetPath("favicon-48x48.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href={getAssetPath("favicon-192x192.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href={getAssetPath("favicon-512x512.png")}
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="48x48"
+      href={getAssetPath("favicon.ico")}
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={getAssetPath("apple-touch-icon.png")}
+    />
+    <link rel="manifest" href={getAssetPath("site.webmanifest")} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
