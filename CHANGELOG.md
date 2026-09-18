@@ -2,6 +2,338 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v6.1.0 (2026-06-06)
+
+### Feat
+
+- add callout support (#655)
+- add accessible image lightbox for post images (#654)
+
+### Fix
+
+- sanitize post title for valid CSS view-transition-name (#650)
+- iterate all weight matches in getFontPathByWeight (#645)
+- update incorrect RSS link (#649)
+
+## v6.0.0 (2026-05-17)
+
+> ⚠ **BREAKING CHANGES**
+>
+> - User config moved to `astro-paper.config.ts`; `src/config.ts` is now internal resolved defaults only
+> - Blog content directory changed from `src/data/blog` to `src/content/posts`
+> - Pages content moved to `src/content/pages`
+> - Several utility exports and component names updated
+
+### Feat
+
+- **config**: rework into typed user-facing `astro-paper.config.ts` with internal resolved defaults layer (#631)
+- **i18n**: add lightweight i18n layer with English string keys and `useTranslations` helper (#631)
+- **mdx**: add MDX support via @astrojs/mdx (#631)
+- **base-path**: add base path support across routing and asset helpers (#631)
+- **archives**: add archives page (#631)
+- **search**: integrate Pagefind for static full-text search (#631)
+- **toc**: add table of contents for markdown posts (#631)
+- **timezone**: add per-post timezone support with site-level fallback (#631)
+- **rtl**: add RTL language direction support (#631)
+- **share**: add share links in post detail page (#631)
+- **edit-post**: add configurable edit post link in post detail (#631)
+- **back-button**: add back button in post detail (#631)
+- **shiki**: add Shiki transformers for enhanced code block syntax highlighting (#631)
+- integrate Astro fonts API with Google Sans Code font (#602)
+
+### Fix
+
+- **og**: avoid double slashes when appending index.png (#631)
+- **header**: adjust icon button and alignment in mobile (#631)
+- **a11y**: improve muted-foreground color contrast (#631)
+- decouple ClientRouter from lightAndDarkMode feature flag (#631)
+- slugify supports better acronyms and preserve non-latin char (#606)
+- add autofocus in search bar and update search result title style (#603)
+
+### Refactor
+
+- optimize theme script to prevent render-blocking (#601)
+
+### Chore
+
+- upgrade Astro to v6 and align CI to Node.js 24 (#631)
+
+## v5.5.1 (2026-01-08)
+
+### Fix
+
+- improve Tag component by making it entire component clickable (#598)
+- **og-images**: wrap Buffer in Uint8Array for Response body (#568)
+- make post header vertical bar respect global settings (#562)
+- skip invalid code block metadata without key-value pairs (#561)
+
+### Refactor
+
+- update component props and improve types (#600)
+- improve props usage and dynamic rendering in LinkButton (#599)
+- improve semantic by replacing decorative hr with borders (#597)
+
+## v5.5.0 (2025-07-12)
+
+### Feat
+
+- enhance file name transformer with additional options (#555)
+
+### Fix
+
+- update syntax highlighting transformer styles (#558)
+- typo in astro-paper-v5 blog post (#556)
+
+## v5.4.3 (2025-06-21)
+
+### Fix
+
+- remove time from post datetime display (#546)
+- update edit post link styling and text (#545)
+- typos across codebase (#543)
+
+## v5.4.2 (2025-06-15)
+
+### Fix
+
+- broken typography in about layout (#541)
+- remove extra padding in fenced code blocks (#540)
+
+## v5.4.1 (2025-06-14)
+
+### Fix
+
+- make heading anchors in article visible on mobile (#537)
+
+### Refactor
+
+- update tailwind typography css overrides (#538)
+
+## v5.4.0 (2025-06-14)
+
+### Feat
+
+- add file name transformer for fenced code blocks (#535)
+- add RTL language support (#531)
+- add Shiki transformers for better syntax highlighting (#534)
+
+### Fix
+
+- replace broken prev/next links with correct paths (#533)
+
+## v5.3.0 (2025-06-11)
+
+### Feat
+
+- improve back-to-top button behavior (#520)(#527)
+
+### Fix
+
+- navigation flicker on Android when in dark mode (#494)
+- add scroll offset for anchor targets (#506)
+- add types for constants to avoid type errors when empty (#501)
+- update heading alignment and font-size (#473)
+
+### Refactor
+
+- extract redundant max-width into utility (#525)
+- use new astro env (#507)
+
+## v5.2.0 (2025-03-22)
+
+### Feat
+
+- add global and per-post timezone support (#491)
+
+### Fix
+
+- adjust nav bar alignment in heading (#492)
+- ensure only one search bar is displayed on nav link clicks (#489)
+
+## v5.1.1 (2025-03-20)
+
+### Fix
+
+- initial light mode flash in dark mode (#488)
+- broken editPost link and update editPost logic  (#487)
+- prevent overflow by adding line breaks in table codes (#485)
+
+## v5.1.0 (2025-03-18)
+
+### Feat
+
+- allow blog posts to be organized by subdirectories
+
+### Other
+
+- update blog post creation guide
+- upgrade astro and dependencies
+
+## v5.0.1 (2025-03-12)
+
+### Fix
+
+- update docker-compose (#475)
+- update import location in giscus example (#474)
+- add an option to disable dynamic OG image generation (#476)
+- remove unused `ogImage` size validation (#462)
+- correct Google Fonts API URL construction for proper weight fetching
+- align vertically in header nav (#460)
+- add font-weight param in og image card style (#453)
+
+### Docs
+
+- update giscus integration guide for AstroPaper v5 (#472)
+- update color schemes guide for AstroPaper v5 (#469)
+- update LaTeX equations guide in Astro blog posts (#461)
+
+## v5.0.0 (2025-03-08)
+
+### Feat
+
+- add pagefind for static search (#458)
+- update back button logic
+
+### Fix
+
+- ignore  in eslint
+- update blog table padding
+- remove unused back url in the card url
+- show light/dark button according to site setting
+- add author url in Google JSON-LD conditionally
+
+### Refactor
+
+- remove react dependency for UI interactions (#457)
+- separate config and constants
+- update import alias in files
+- update blog directory to `src/data/blog`
+
+
+- upgrade to Tailwind CSS v4
+- update import alias to `@/*`
+- upgrade Astro to v5 and related packages
+
+## v4.8.0 (2025-02-08)
+
+### Feat
+
+- add pencil icon before suggestion changes text (#405)
+
+### Fix
+
+- use tag name for display in tags page (#438)
+- exclude `/archives` from sitemap if it is disabled (#425)
+- add inline-block class to post title for improved view transition animation (#420)
+- sort archive posts by pubDatetime (#415)
+- focus search input on mount (#414)
+- replace twitter with x (#407)
+
+## v4.7.0 (2024-10-15)
+
+### Feat
+
+- add archives page with configurable menu (#386)
+
+## v4.6.0 (2024-10-13)
+
+### Feat
+
+- add edit post feature in blog posts (#384)
+
+### Refactor
+
+- remove duplicate [page].astro (#389)
+
+## v4.5.1 (2024-10-02)
+
+### Fix
+
+- **docs**: update giscus blog post (#392)
+- add missing posts sorting (#383)
+
+## v4.5.0 (2024-09-16)
+
+### Feat
+
+- add prev/next links at the bottom of blog post (#372)
+
+### Fix
+
+- **og**: add the missing SITE.website to loadGoogleFonts  (#360)
+- **blog**: correct file reference in reading time guide (#359)
+
+### Refactor
+
+- replace pagination logic with Astro built-in pagination (#376)
+
+### Perf
+
+- preload font and load theme script asynchronously (#380)
+
+## v4.4.0 (2024-08-19)
+
+### Content Layer API
+
+- upgrade Astro and use Content Layer API (#355)
+
+### Others
+
+- upgrade ESLint to v9 and update configurations (#356)
+- replace github-slugger with lodash.kebabcase (#357)
+
+## v4.3.2 (2024-08-17)
+
+### Fix
+
+- **a11y**: remove aria-labels from non-interactive elements (#346)
+
+### Refactor
+
+- update tailwind classes to v3 syntax (#345)
+- remove commented codes
+
+### Others
+
+- docs: update estimated reading time blog post (#354)
+- docs: add instructions for Google Site Verification in AstroPaper (#353)
+- docs: update pre-commit hook blog post (#344)
+- ci: add CI workflow (#340)
+
+## v4.3.1 (2024-07-27)
+
+### Fix
+
+- resolve non-latin char issue in generated OG images (#318)
+
+## v4.3.0 (2024-07-27)
+
+### Feat
+
+- support light/dark theme in code blocks (#327)
+- add number of posts config for home page (#281)
+- make heading links keyboard focusable (#275)
+- add JSON-LD structured data (#260)
+- add scroll indicator in blog posts (#249)
+
+### Fix
+
+- adding data-theme to tailwind config (#319)
+- avoid `undefined` when passing class-name as prop (#270)
+- add $CURRENT_TIMEZONE_OFFSET in custom code snippets (#264)
+- display `Updated` in posts only when modDatetime > pubDatetime (#258)
+- add SITE.title in PostDetails title tag for consistent look (#247)
+- add trailing slash to links to avoid extra redirects (#246)
+- update incorrect typo in predefined-color-schemes.md (#245)
+
+### Refactor
+
+- remove trailing commas in tsconfig.json (#325)
+- remove redundant role in article element (#323)
+- avoid using unnecessary class-name in the pagination component (#274)
+- update post detail script codes
+- update code formatting with prettier
+
 ## [4.2.0](https://github.com/satnaing/astro-paper/compare/v4.1.0...v4.2.0) (2024-01-22)
 
 ### Features
@@ -75,7 +407,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * [#133](https://github.com/satnaing/astro-paper/issues/133) update LOCALE config to cover overall locales ([cd02b04](https://github.com/satnaing/astro-paper/commit/cd02b047d2b5e3b4a2940c0ff30568cdebcec0b8))
 * [#72](https://github.com/satnaing/astro-paper/issues/72) replace SITE.website with a URL in astro.config site value ([26ecd17](https://github.com/satnaing/astro-paper/commit/26ecd173ddec1075abb6ede9bbb62572b9f74b33))
-* anchor oveflow on small screen size ([d025c91](https://github.com/satnaing/astro-paper/commit/d025c914d91a9b7969c8db4bd6a700723ef86a39))
+* anchor overflow on small screen size ([d025c91](https://github.com/satnaing/astro-paper/commit/d025c914d91a9b7969c8db4bd6a700723ef86a39))
 * **css:** text wrap in code blocks ([0c92492](https://github.com/satnaing/astro-paper/commit/0c92492959bed20f144d5d949116891d61c8e098))
 * decode unicode tag chars in breadcrumb ([#175](https://github.com/satnaing/astro-paper/issues/175)) ([058c790](https://github.com/satnaing/astro-paper/commit/058c790d26cbeab286679a8a8e3bad6c14042d6d))
 * get og image url correctly ([7f3edbd](https://github.com/satnaing/astro-paper/commit/7f3edbdecdce597d15e562e7d497d69af505d550))
