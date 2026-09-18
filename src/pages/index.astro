@@ -21,9 +21,44 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 const homePath = getRelativeLocaleUrl(locale, "");
+
+const siteURL = new URL(config.site.url).href;
+
+const author = {
+  "@type": "Person",
+  "@id": `${siteURL}#author`,
+  name: config.site.author,
+  ...(config.site.profile && { url: config.site.profile }),
+  sameAs: config.socials.map(({ url }) => url),
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteURL}#website`,
+      url: siteURL,
+      name: config.site.title,
+      alternateName: config.site.header,
+      description: config.site.description,
+      inLanguage: config.site.lang,
+      publisher: { "@id": `${siteURL}#author` },
+    },
+    author,
+  ],
+};
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(structuredData)}
+    />
+  </Fragment>
+
   <Header />
   <main
     id="main-content"

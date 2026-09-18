@@ -20,3 +20,18 @@ export function withExplicitFirstPage<T extends PaginatedRoute>(
     { ...firstPage, params: { ...firstPage.params, page: "1" } },
   ];
 }
+
+/**
+ * The `/1/` alias serves the same listing as the bare path, so it points its
+ * canonical link at the bare path and lets search engines collapse the pair.
+ */
+export function firstPageAlias(
+  url: URL,
+  site: URL | undefined
+): string | undefined {
+  const pathname = url.pathname.replace(/\/+$/, "");
+  if (!pathname.endsWith("/1")) return undefined;
+
+  const target = `${pathname.slice(0, -1)}`;
+  return new URL(target, site ?? url).href;
+}

@@ -11,7 +11,9 @@ type Props = {
   title?: string;
   description?: string;
   ogImage?: string;
+  ogType?: "website" | "article";
   canonicalURL?: string;
+  lang?: string;
 };
 
 const { site } = config;
@@ -20,7 +22,9 @@ const {
   title = site.title,
   description = site.description,
   ogImage = resolveDefaultOgImagePath(config),
+  ogType = "website",
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  lang = Astro.currentLocale ?? site.lang,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
@@ -33,7 +37,7 @@ const rssHref = getRelativeLocaleUrl(
 <!doctype html>
 <html
   dir={site.dir ?? "ltr"}
-  lang={Astro.currentLocale ?? site.lang}
+  lang={lang}
   class="overflow-y-scroll scroll-smooth"
 >
   <head>
@@ -100,7 +104,7 @@ const rssHref = getRelativeLocaleUrl(
     <link rel="sitemap" href={getAssetPath("sitemap-index.xml")} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={site.title} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

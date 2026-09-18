@@ -4,40 +4,56 @@ import config from "@/config";
 
 type Props = {
   title?: string;
+  headline?: string;
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  lang?: string;
   pubDatetime?: Date;
   modDatetime?: Date | null;
 };
 
 const { site } = config;
 
-const { title, description, ogImage, canonicalURL, pubDatetime, modDatetime } =
-  Astro.props;
+const {
+  title,
+  headline,
+  description,
+  ogImage,
+  canonicalURL,
+  lang,
+  pubDatetime,
+  modDatetime,
+} = Astro.props;
+
+const pageURL = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
+
+const author = {
+  "@type": "Person",
+  name: site.author,
+  ...(site.profile && { url: site.profile }),
+};
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: title ?? site.title,
-  image: ogImage,
+  headline: headline ?? title ?? site.title,
+  ...(description && { description }),
+  ...(ogImage && { image: ogImage }),
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageURL },
+  url: pageURL,
+  inLanguage: lang ?? site.lang,
   ...(pubDatetime && { datePublished: pubDatetime.toISOString() }),
-  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-  author: [
-    {
-      "@type": "Person",
-      name: site.author,
-      ...(site.profile && { url: site.profile }),
-    },
-  ],
+  ...((modDatetime ?? pubDatetime) && {
+    dateModified: (modDatetime ?? pubDatetime)?.toISOString(),
+  }),
+  author: [author],
+  publisher: author,
 };
 ---
 
-<Layout {title} {description} {ogImage} {canonicalURL}>
+<Layout {title} {description} {ogImage} {canonicalURL} {lang} ogType="article">
   <Fragment slot="head">
-    <!-- Override og:type for article pages -->
-    <meta property="og:type" content="article" />
-
     {
       pubDatetime && (
         <meta
@@ -54,6 +70,7 @@ const structuredData = {
         />
       )
     }
+    <meta property="article:author" content={site.author} />
 
     <script
       type="application/ld+json"

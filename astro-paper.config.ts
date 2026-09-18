@@ -5,7 +5,8 @@ export default defineAstroPaperConfig({
     url: "https://bondig.dev/",
     title: "Bondig Software",
     header: "Bondig.dev",
-    description: "My personal blog about web development and programming.",
+    description:
+      "Brandon Bondig writes about web development, self-hosting, serverless GPUs and the side projects he ships — practical guides with working code.",
     author: "Brandon Bondig",
     profile: "https://bondig.dev/about/",
     ogImage: "astropaper-og.jpg",

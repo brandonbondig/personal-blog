@@ -3,6 +3,7 @@ author: Brandon Bondig
 pubDatetime: 2025-05-17T23:13:21Z
 title: Sådan får du adgang til dine EWII-data med Python
 slug: sådan-får-du-adgang-til-dine-ewii-data-med-python
+lang: da
 featured: true
 draft: false
 tags:
