@@ -31,3 +31,5 @@ public/pagefind
 
 # docker compose
 compose.override.yaml
+
+node_modules.old/
