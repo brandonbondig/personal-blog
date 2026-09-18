@@ -40,13 +40,24 @@ const rssHref = getRelativeLocaleUrl(
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={getAssetPath("favicon.svg")} />
-    <link rel="icon" href={getAssetPath("favicon.ico")} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Analytics -->
+    <script
+      defer
+      src="https://analytics.bondig.dev/script.js"
+      data-website-id="2230fb0d-d79a-45bd-9a91-f83a02cb0814"></script>
+
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6040389729588918"
+      crossorigin="anonymous"></script>
+
     <!-- Font -->
     <Font
-      cssVariable="--font-google-sans-code"
+      cssVariable="--font-ibm-plex-mono"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}
     />
 

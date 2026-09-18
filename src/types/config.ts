@@ -3,6 +3,8 @@ interface SiteConfig {
   url: string;
   /** Blog title shown in header and meta tags */
   title: string;
+  /** Wordmark shown in the site header, when it differs from `title` */
+  header?: string;
   /** Short description used in SEO meta and RSS feed */
   description: string;
   /** Default post author name */
@@ -115,7 +117,7 @@ type ResolvedSiteConfig = Required<
     | "ogImage"
   >
 > &
-  Pick<SiteConfig, "profile" | "googleVerification">;
+  Pick<SiteConfig, "profile" | "googleVerification" | "header">;
 
 export interface ResolvedAstroPaperConfig {
   site: ResolvedSiteConfig;

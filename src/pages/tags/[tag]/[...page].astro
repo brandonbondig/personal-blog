@@ -11,6 +11,7 @@ import Pagination from "@/components/Pagination.astro";
 import { getUniqueTags } from "@/utils/getUniqueTags";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { slugifyAll } from "@/utils/slugify";
+import { withExplicitFirstPage } from "@/utils/withExplicitFirstPage";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
@@ -23,11 +24,13 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       posts.filter(({ data }) => slugifyAll(data.tags).includes(tag))
     );
 
-    return paginate(tagPosts, {
-      params: { tag },
-      props: { tagName },
-      pageSize: config.posts.perPage,
-    });
+    return withExplicitFirstPage(
+      paginate(tagPosts, {
+        params: { tag },
+        props: { tagName },
+        pageSize: config.posts.perPage,
+      })
+    );
   });
 }
 

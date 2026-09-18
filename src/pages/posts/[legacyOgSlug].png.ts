@@ -1,9 +1,14 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
+import { slug as githubSlug } from "github-slugger";
 import { renderPostOgImage } from "@/utils/generateOgImages";
-import { getPostSlug } from "@/utils/getPostPaths";
 import config from "@/config";
 
+/**
+ * AstroPaper v4 published every generated OG image at `/posts/{slugified-title}.png`.
+ * v6 publishes them at `/posts/{slug}/index.png` instead, so the old paths are kept
+ * alive here for links and social-card caches that still point at them.
+ */
 export async function getStaticPaths() {
   if (!config.features.dynamicOgImage) {
     return [];
@@ -14,7 +19,7 @@ export async function getStaticPaths() {
   );
 
   return posts.map(post => ({
-    params: { slug: getPostSlug(post.id, post.filePath) },
+    params: { legacyOgSlug: githubSlug(post.data.title) },
     props: post,
   }));
 }

@@ -1,11 +1,14 @@
-import type { APIRoute } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { fontData, experimental_getFontFileURL } from "astro:assets";
 import satori from "satori";
 import sharp from "sharp";
-import { fontData, experimental_getFontFileURL } from "astro:assets";
-import { getFontPathByWeight } from "@/utils/getFontPathByWeight";
+import { getFontPathByWeight } from "./getFontPathByWeight";
 import config from "@/config";
 
-export const GET: APIRoute = async context => {
+export async function renderPostOgImage(
+  post: CollectionEntry<"posts">,
+  url: URL
+): Promise<Response> {
   const fonts = fontData["--font-ibm-plex-mono"];
   const regularFontPath = getFontPathByWeight(fonts, 400);
   const boldFontPath = getFontPathByWeight(fonts, 700);
@@ -15,10 +18,10 @@ export const GET: APIRoute = async context => {
   }
 
   const [regularData, boldData] = await Promise.all([
-    fetch(experimental_getFontFileURL(regularFontPath, context.url)).then(res =>
+    fetch(experimental_getFontFileURL(regularFontPath, url)).then(res =>
       res.arrayBuffer()
     ),
-    fetch(experimental_getFontFileURL(boldFontPath, context.url)).then(res =>
+    fetch(experimental_getFontFileURL(boldFontPath, url)).then(res =>
       res.arrayBuffer()
     ),
   ]);
@@ -34,7 +37,6 @@ export const GET: APIRoute = async context => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "IBM Plex Mono",
         },
         children: [
           {
@@ -82,34 +84,15 @@ export const GET: APIRoute = async context => {
                   },
                   children: [
                     {
-                      type: "div",
+                      type: "p",
                       props: {
                         style: {
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "90%",
-                          maxHeight: "90%",
+                          fontSize: 72,
+                          fontWeight: "bold",
+                          maxHeight: "84%",
                           overflow: "hidden",
-                          textAlign: "center",
                         },
-                        children: [
-                          {
-                            type: "p",
-                            props: {
-                              style: { fontSize: 72, fontWeight: "bold" },
-                              children: config.site.title,
-                            },
-                          },
-                          {
-                            type: "p",
-                            props: {
-                              style: { fontSize: 28 },
-                              children: config.site.description,
-                            },
-                          },
-                        ],
+                        children: post.data.title,
                       },
                     },
                     {
@@ -117,18 +100,45 @@ export const GET: APIRoute = async context => {
                       props: {
                         style: {
                           display: "flex",
-                          justifyContent: "flex-end",
+                          justifyContent: "space-between",
                           width: "100%",
                           marginBottom: "8px",
                           fontSize: 28,
                         },
-                        children: {
-                          type: "span",
-                          props: {
-                            style: { overflow: "hidden", fontWeight: "bold" },
-                            children: new URL(config.site.url).hostname,
+                        children: [
+                          {
+                            type: "span",
+                            props: {
+                              children: [
+                                "by ",
+                                {
+                                  type: "span",
+                                  props: {
+                                    style: { color: "transparent" },
+                                    children: '"',
+                                  },
+                                },
+                                {
+                                  type: "span",
+                                  props: {
+                                    style: {
+                                      overflow: "hidden",
+                                      fontWeight: "bold",
+                                    },
+                                    children: post.data.author,
+                                  },
+                                },
+                              ],
+                            },
                           },
-                        },
+                          {
+                            type: "span",
+                            props: {
+                              style: { overflow: "hidden", fontWeight: "bold" },
+                              children: config.site.title,
+                            },
+                          },
+                        ],
                       },
                     },
                   ],
@@ -165,4 +175,4 @@ export const GET: APIRoute = async context => {
   return new Response(new Uint8Array(pngBuffer), {
     headers: { "Content-Type": "image/png" },
   });
-};
+}
